@@ -10,8 +10,25 @@ fi
 # Export PATH Here
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:/opt/android-studio/jre/bin"
-export PATH="$PATH:/opt/lampp/bin"
+#export PATH="$PATH:/opt/lampp/bin"
+export PATH="$PATH:/home/adifens/.config/composer/vendor/bin"
+export PATH="$PATH:/home/adifens/Development/flutter/bin"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH="$PATH:$ANDROID_HOME/emulator"
 
+# Alias
+alias soundOn="systemctl --user restart pulseaudio"
+alias btOn="sudo systemctl restart bluetooth"
+alias lamppOn="sudo /opt/lampp/lampp start"
+alias lamppOff="sudo /opt/lampp/lampp stop"
+alias lamppui="sudo /opt/lampp/manager-linux-x64.run"
+alias webStat="sudo systemctl status nginx"
+alias webOn="sudo systemctl start nginx"
+alias webOff="sudo systemctl stop nginx"
+alias vpnOn="protonvpn-cli c"
+alias vpnOff="protonvpn-cli d"
+alias update="sudo apt update; sudo apt upgrade"
+alias del="history -c"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,7 +96,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+	git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,6 +129,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
